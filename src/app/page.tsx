@@ -5,6 +5,7 @@ import { Hero } from "../components/Hero";
 import { Features } from "../components/Features";
 import { Gallery } from "../components/Gallery";
 import { JoinServer } from "../components/JoinServer";
+import { MusicPlayer } from "../components/MusicPlayer"; 
 import { Footer } from "../components/Footer";
 import { TranslationProvider } from "../hooks/useTranslation";
 
@@ -101,12 +102,14 @@ export default function Home () {
   return (
     <TranslationProvider>
       <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <div className="fixed inset-0 opacity-30 dark:opacity-10 pointer-events-none bg-[radial-gradient(#3689fe_1px,transparent_1px)] [background-size:40px_40px]"></div>
         <Navbar />
         <Hero />
         <Features />
         <Gallery />
         <JoinServer />
         <Footer />
+        <MusicPlayer />
         <div className="fixed -bottom-20 -left-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl z-0 parallax" data-speed="0.05"></div>
         <div className="fixed top-1/3 -right-32 w-96 h-96 rounded-full bg-secondary/20 blur-3xl z-0 parallax" data-speed="0.08"></div>
       </div>

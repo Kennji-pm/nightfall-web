@@ -6,6 +6,10 @@ export const vi = {
     vote: "Bình Chọn",
     join: "Tham Gia Ngay",
   },
+  loading: {
+    preparing: "Đang Chuẩn Bị...",
+    loading: "Đang Tải...",
+  },
   section: {
     home: "Trang Chủ",
     features: "Tính Năng",
@@ -19,6 +23,14 @@ export const vi = {
       players: "Người Chơi",
       uptime: "Hoạt Động",
       worlds: "Thế Giới",
+    },
+    serverstatus: {
+      title: "Trạng Thái Máy Chủ",
+      online: "Trực Tuyến",
+      offline: "Ngoại Tuyến",
+      players: "Người Chơi",
+      version: "Phiên Bản",
+      maintenance: "Máy chủ đang được bảo trì. Vui lòng quay lại sau.",
     },
     features: {
       title: "Tính Năng Máy Chủ",

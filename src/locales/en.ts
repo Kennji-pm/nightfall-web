@@ -6,6 +6,10 @@ export const en = {
       vote: "Vote",
       join: "Join Now",
     },
+    loading: {
+      preparing: "Preparing...",
+      loading: "Loading...",
+    },
     section: {
       home: "Home",
       features: "Features",
@@ -19,6 +23,14 @@ export const en = {
       players: "Active Players",
       uptime: "Server Uptime",
       worlds: "Unique Worlds",
+    },
+    serverstatus: {
+      title: "Server Status",
+      online: "Online",
+      offline: "Offline",
+      players: "Player Online",
+      version: "Version",
+      maintenance: "Server is currently under maintenance. Please check back later.",
     },
     features: {
       title: "Server Features",

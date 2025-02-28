@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src={"/images/logo.png"}
               alt="Nightfall Assault Logo"
@@ -43,12 +43,12 @@ export function Navbar() {
               className="w-15 h-15 object-cover rounded-2xl"
             ></Image>
             <span className="font-bold text-xl">Nightfall Assault</span>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="#home"
+              href="/#home"
               className="font-medium hover:text-primary transition-colors duration-200"
             >
               {t.navbar.home}
@@ -66,13 +66,13 @@ export function Navbar() {
               {t.navbar.store}
             </Link>
             <Link
-              href="#vote"
+              href="/vote"
               className="font-medium hover:text-primary transition-colors duration-200"
             >
               {t.navbar.vote}
             </Link>
             <Link
-              href="#join"
+              href="/#join"
               className="minecraft-btn"
             >
               {t.navbar.join}

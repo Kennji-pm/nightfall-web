@@ -1,6 +1,7 @@
 "use client"
 import { Geist, Geist_Mono } from "next/font/google";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Loading } from "@/components/Loading";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     // Check for dark mode preference
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -52,7 +54,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {isLoading ? (
+          <Loading onFinished={() => setIsLoading(false)} />
+        ) : (
+          children
+        )}
       </body>
     </html>
   );

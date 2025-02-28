@@ -26,18 +26,18 @@ export function Footer() {
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-            <a href="#home" className="hover:text-primary transition-colors">
+            <Link href="/#home" className="hover:text-primary transition-colors">
               {t.section.home}
-            </a>
-            <a href="#features" className="hover:text-primary transition-colors">
+            </Link>
+            <Link href="/#features" className="hover:text-primary transition-colors">
               {t.section.features}
-            </a>
-            <a href="#gallery" className="hover:text-primary transition-colors">
+            </Link>
+            <Link href="/#gallery" className="hover:text-primary transition-colors">
               {t.section.gallery}
-            </a>
-            <a href="#join" className="hover:text-primary transition-colors">
+            </Link>
+            <Link href="/#join" className="hover:text-primary transition-colors">
               {t.navbar.join}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -46,10 +46,10 @@ export function Footer() {
             &copy; {year} Nightfall Assault. {t.footer.rights}.
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-muted-foreground">
-            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+            <Link href="/privacy" className="hover:text-primary transition-colors">
               {t.footer.privacy}
             </Link>
-            <Link href="/terms-and-privacy" className="hover:text-primary transition-colors">
+            <Link href="/terms" className="hover:text-primary transition-colors">
               {t.footer.terms}
             </Link>
             <Link href="mailto:info@nightfallassault.net" className="hover:text-primary transition-colors">
