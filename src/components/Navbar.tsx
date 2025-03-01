@@ -60,7 +60,7 @@ export function Navbar() {
               {t.navbar.docs}
             </Link>
             <Link
-              href="#store"
+              href="/#store"
               className="font-medium hover:text-primary transition-colors duration-200"
             >
               {t.navbar.store}
@@ -108,7 +108,7 @@ export function Navbar() {
         <div className="md:hidden bg-background border-t border-border mt-3 animate-slide-in">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link
-              href="#home"
+              href="/#home"
               className="font-medium p-2 hover:bg-secondary rounded-lg transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -122,21 +122,21 @@ export function Navbar() {
               {t.navbar.docs}
             </Link>
             <Link
-              href="#store"
+              href="/#store"
               className="font-medium p-2 hover:bg-secondary rounded-lg transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.navbar.store}
             </Link>
             <Link
-              href="#vote"
+              href="/vote"
               className="font-medium p-2 hover:bg-secondary rounded-lg transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.navbar.vote}
             </Link>
             <Link
-              href="#join"
+              href="/#join"
               className="minecraft-btn text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >

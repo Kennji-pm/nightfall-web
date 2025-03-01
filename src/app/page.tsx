@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { Features } from "../components/Features";
-import { Gallery } from "../components/Gallery";
 import { JoinServer } from "../components/JoinServer";
-import { MusicPlayer } from "../components/MusicPlayer"; 
 import { Footer } from "../components/Footer";
 import { TranslationProvider } from "../hooks/useTranslation";
+import { ContactPopup } from "@/components/ContactPopup";
+import AutoSlideShow from "@/components/AutoSlideShow";
 
 export default function Home () {
   useEffect(() => {
@@ -106,10 +106,10 @@ export default function Home () {
         <Navbar />
         <Hero />
         <Features />
-        <Gallery />
+        <AutoSlideShow />
         <JoinServer />
         <Footer />
-        <MusicPlayer />
+        <ContactPopup />
         <div className="fixed -bottom-20 -left-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl z-0 parallax" data-speed="0.05"></div>
         <div className="fixed top-1/3 -right-32 w-96 h-96 rounded-full bg-secondary/20 blur-3xl z-0 parallax" data-speed="0.08"></div>
       </div>

@@ -54,6 +54,8 @@ export const en = {
     gallery: {
       title: "Server Gallery",
       viewMore: "View More",
+      slidetitle: "Stunning Imagery",
+      slidesubtitle: "Explore our collection of beautiful visuals"
     },
     join: {
       title: "Ready to Start Your Adventure?",
@@ -69,6 +71,19 @@ export const en = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
       contact: "Contact Us",
+    },
+    contact: {
+      title: "Contact Support",
+      subtitle: "Send a message to our support team",
+      name: "Name",
+      namePlaceholder: "Your Name",
+      email: "Email",
+      message: "Message",
+      messagePlaceholder: "Describe the issue you're experiencing...",
+      send: "Send Message",
+      sending: "Sending...",
+      sent: "Sent!",
+      submitted: "Your message has been sent.",
     },
     java: {
       step1: "Open Minecraft Java Edition",

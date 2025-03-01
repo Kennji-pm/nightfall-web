@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { TranslationProvider } from "@/hooks/useTranslation";
+import { ContactPopup } from "@/components/ContactPopup";
 
 const Terms = () => {
   useEffect(() => {
@@ -172,7 +173,7 @@ const Terms = () => {
             </div>
           </div>
         </main>
-
+        <ContactPopup />
         <Footer />
       </div>
     </TranslationProvider>

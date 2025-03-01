@@ -3,7 +3,18 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["i.ytimg.com", "source.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        pathname: '**',
+      },
+    ],
   },
 };
 

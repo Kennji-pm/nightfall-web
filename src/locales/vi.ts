@@ -54,6 +54,8 @@ export const vi = {
     gallery: {
       title: "Bộ Sưu Tập Máy Chủ",
       viewMore: "Xem Thêm",
+      slidetitle: "Hình Ảnh Tuyệt Đẹp",
+      slidesubtitle: "Khám phá bộ sưu tập hình ảnh đẹp mắt của chúng tôi"
     },
     join: {
       title: "Sẵn Sàng Bắt Đầu Cuộc Phiêu Lưu?",
@@ -69,6 +71,19 @@ export const vi = {
       privacy: "Chính Sách Bảo Mật",
       terms: "Điều Khoản Dịch Vụ",
       contact: "Liên Hệ",
+    },
+    contact: {
+      title: "Liên Hệ Hỗ Trợ",
+      subtitle: "Gửi tin nhắn cho đội ngũ hỗ trợ của chúng tôi",
+      name: "Tên của bạn",
+      namePlaceholder: "Nhập tên của bạn",
+      email: "Email",
+      message: "Tin nhắn",
+      messagePlaceholder: "Mô tả vấn đề bạn đang gặp phải...",
+      send: "Gửi",
+      sending: "Đang Gửi...",
+      sent: "Đã Gửi!",
+      submitted: "Tin nhắn của bạn đã được gửi đi.",
     },
     java: {
       step1: "Mở Minecraft Java Edition",
