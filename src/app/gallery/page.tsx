@@ -49,12 +49,12 @@ const galleryImages = [
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [, setIsFullscreen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredImages, setFilteredImages] = useState(galleryImages);
-  const [sortBy, setSortBy] = useState<"newest" | "popular" | "views">("newest");
+  const [sortBy] = useState<"newest" | "popular" | "views">("newest");
   const galleryRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
 
