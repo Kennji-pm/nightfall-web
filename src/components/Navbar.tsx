@@ -73,7 +73,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/#join"
-              className="minecraft-btn"
+              className="minecraft-animated-btn text-base"
             >
               {t.navbar.join}
             </Link>

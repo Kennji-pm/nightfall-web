@@ -79,6 +79,49 @@
   @apply opacity-20;
 }
 
+/* Enhanced animated button */
+.minecraft-animated-btn {
+  @apply relative px-6 py-3 font-bold text-white bg-minecraft-blue rounded-lg
+         shadow-lg hover:shadow-xl active:scale-95 overflow-hidden
+         transition-all duration-300 z-10;
+}
+
+.minecraft-animated-btn::before {
+  @apply content-[''] absolute top-0 left-0 w-full h-full bg-white opacity-0 
+         transition-opacity duration-300 z-[-1];
+}
+
+.minecraft-animated-btn::after {
+  @apply content-[''] absolute top-0 left-0 w-full h-full 
+         bg-gradient-to-r from-blue-600 to-blue-400
+         transform -translate-x-full transition-transform duration-500 z-[-2];
+}
+
+.minecraft-animated-btn:hover::before {
+  @apply opacity-10;
+}
+
+.minecraft-animated-btn:hover::after {
+  @apply translate-x-0;
+}
+
+/* Ghost button style */
+.minecraft-ghost-btn {
+  @apply relative px-6 py-3 font-bold bg-secondary/80 text-foreground rounded-lg
+         shadow-md hover:shadow-lg active:scale-95 overflow-hidden
+         transition-all duration-300 border border-border hover:border-primary
+         hover:text-primary;
+}
+
+.minecraft-ghost-btn::before {
+  @apply content-[''] absolute top-0 left-0 w-0 h-full 
+         bg-primary/10 transition-all duration-500;
+}
+
+.minecraft-ghost-btn:hover::before {
+  @apply w-full;
+}
+
 .glass-card {
   @apply backdrop-blur-lg bg-white/20 dark:bg-black/30 
          border border-white/30 dark:border-white/10 
@@ -324,6 +367,43 @@
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.gallery-item {
+  @apply opacity-0 transform translate-y-4 transition-all duration-500;
+}
+
+.gallery-item.animate-in {
+  @apply opacity-100 translate-y-0;
+}
+
+.gallery-filter-button {
+  @apply px-4 py-2 rounded-full transition-all duration-300 text-sm;
+}
+
+.gallery-filter-button.active {
+  @apply bg-primary text-white shadow-md;
+}
+
+.gallery-filter-button:not(.active) {
+  @apply bg-background/80 hover:bg-background/90 text-muted-foreground hover:text-foreground;
+}
+
+/* Image Lightbox */
+.lightbox-overlay {
+  @apply fixed inset-0 bg-black/95 z-50 opacity-0 transition-opacity duration-300;
+}
+
+.lightbox-overlay.show {
+  @apply opacity-100;
+}
+
+.lightbox-content {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 max-w-[90vw] max-h-[90vh] opacity-0 scale-95 transition-all duration-300;
+}
+
+.lightbox-content.show {
+  @apply opacity-100 scale-100;
 }
 
 html {

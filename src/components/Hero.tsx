@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../hooks/useTranslation";
-import { Wifi, WifiOff, Users, Globe, Paperclip } from "lucide-react";
+import { Wifi, WifiOff, Users, Globe, Paperclip, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
@@ -10,12 +10,13 @@ export function Hero() {
   const statsRef = useRef<HTMLDivElement>(null);
   const heroContentRef = useRef<HTMLDivElement>(null);
   const heroImageRef = useRef<HTMLDivElement>(null);
-  const [serverStatus, setServerStatus] = useState<'online' | 'offline'>('offline');
+  const [serverStatus, setServerStatus] = useState<'online' | 'offline' | 'checking'>('checking');
   const [playerCount, setPlayerCount] = useState<number>(0);
   const [maxPlayers, setMaxPlayers] = useState<number>(0);
   const [serverVersion, setServerVersion] = useState<string>('None');
 
-  const serverStatusCheck = async() => {
+  const serverStatusCheck = (async() => {
+    setServerStatus('checking');
     await axios.get('https://api.mcsrvstat.us/3/mp.opblocks.com')
     .then(function (response) {
       // handle success
@@ -23,13 +24,12 @@ export function Hero() {
       setPlayerCount(response.data.players.online);
       setMaxPlayers(response.data.players.max);
       setServerVersion(response.data.protocol.name);
-
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     });
-  };
+  });
 
   useEffect(() => {
     serverStatusCheck();
@@ -148,12 +148,15 @@ export function Hero() {
               {t.hero.subtitle}
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
-              <Link href="#join" className="minecraft-btn text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+            <Link
+                href="/#join"
+                className="minecraft-animated-btn text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
+              >
                 {t.hero.cta}
               </Link>
               <Link
-                href="#features"
-                className="px-6 md:px-8 py-3 md:py-4 bg-secondary text-foreground rounded-lg font-medium transition-all duration-300 hover:bg-secondary/80 active:scale-95 text-base md:text-lg"
+                href="/#features"
+                className="minecraft-ghost-btn px-6 md:px-8 py-3 md:py-4 text-base md:text-lg"
               >
                 {t.section.features}
               </Link>
@@ -163,16 +166,27 @@ export function Hero() {
                 <h3 className="font-bold text-lg flex items-center gap-2">
                   <Globe className="h-4 w-4" /> {t.serverstatus.title}
                 </h3>
-                <div className={`flex items-center gap-1 ${serverStatus === 'online' ? 'text-green-500' : 'text-red-500'}`}>
+                <div className={`flex items-center gap-1 ${
+                  serverStatus === 'online' 
+                    ? 'text-green-500' 
+                    : serverStatus === 'offline' 
+                      ? 'text-red-500' 
+                      : 'text-yellow-500'
+                }`}>
                   {serverStatus === 'online' ? (
                     <>
                       <Wifi className="h-4 w-4" /> 
-                      <span className="text-sm font-semibold">{t.serverstatus.online}</span>
+                      <span className="text-sm font-semibold">Online</span>
+                    </>
+                  ) : serverStatus === 'offline' ? (
+                    <>
+                      <WifiOff className="h-4 w-4" /> 
+                      <span className="text-sm font-semibold">Offline</span>
                     </>
                   ) : (
                     <>
-                      <WifiOff className="h-4 w-4" /> 
-                      <span className="text-sm font-semibold">{t.serverstatus.offline}</span>
+                      <Loader2 className="h-4 w-4 animate-spin" /> 
+                      <span className="text-sm font-semibold">Checking...</span>
                     </>
                   )}
                 </div>
@@ -202,13 +216,41 @@ export function Hero() {
                   {t.serverstatus.maintenance}
                 </div>
               )}
+
+              {serverStatus === 'checking' && (
+                <div className="text-sm text-muted-foreground bg-background/40 p-2 rounded-lg flex items-center gap-2">
+                  <div className="animate-pulse w-full text-center">
+                    Checking server status...
+                  </div>
+                </div>
+              )}
               
-              <div className={`mt-2 w-full h-1 rounded-full overflow-hidden ${serverStatus === 'online' ? 'bg-green-200 dark:bg-green-900' : 'bg-red-200 dark:bg-red-900'}`}>
+              <div className={`mt-2 w-full h-1 rounded-full overflow-hidden ${
+                serverStatus === 'online' 
+                  ? 'bg-green-200 dark:bg-green-900' 
+                  : serverStatus === 'offline' 
+                    ? 'bg-red-200 dark:bg-red-900' 
+                    : 'bg-yellow-200 dark:bg-yellow-900'
+              }`}>
                 <div 
-                  className={`h-full ${serverStatus === 'online' ? 'bg-green-500' : 'bg-red-500'}`}
+                  className={`h-full ${
+                    serverStatus === 'online' 
+                      ? 'bg-green-500' 
+                      : serverStatus === 'offline' 
+                        ? 'bg-red-500' 
+                        : 'bg-yellow-500 animate-pulse'
+                  }`}
                   style={{ 
-                    width: serverStatus === 'online' ? '100%' : '33%',
-                    animation: serverStatus === 'online' ? 'pulse-slow 4s infinite' : 'none'
+                    width: serverStatus === 'online' 
+                      ? '100%' 
+                      : serverStatus === 'offline' 
+                        ? '33%' 
+                        : '66%',
+                    animation: serverStatus === 'checking' 
+                      ? 'pulse 1.5s infinite' 
+                      : serverStatus === 'online' 
+                        ? 'pulse-slow 4s infinite' 
+                        : 'none'
                   }}
                 ></div>
               </div>
