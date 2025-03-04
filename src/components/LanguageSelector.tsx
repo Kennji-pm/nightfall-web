@@ -18,7 +18,7 @@ export function LanguageSelector() {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="p-2 rounded-full bg-secondary transition-all duration-300 hover:bg-secondary/80 active:scale-95 flex items-center gap-1"
+        className="p-2 cursor-pointer rounded-full bg-secondary transition-all duration-300 hover:bg-secondary/80 active:scale-95 flex items-center gap-1"
         aria-label="Select language"
       >
         <Globe className="h-5 w-5 text-foreground" />
@@ -34,7 +34,7 @@ export function LanguageSelector() {
           <div className="absolute right-0 mt-2 w-32 rounded-xl overflow-hidden shadow-lg bg-background border border-border z-20 animate-fade-in">
             <button
               onClick={() => switchLanguage("en")}
-              className={`block w-full text-left px-4 py-2 hover:bg-secondary transition-colors duration-200 ${
+              className={`block cursor-pointer w-full text-left px-4 py-2 hover:bg-secondary transition-colors duration-200 ${
                 language === "en" ? "bg-primary/10 font-medium" : ""
               }`}
             >
@@ -42,7 +42,7 @@ export function LanguageSelector() {
             </button>
             <button
               onClick={() => switchLanguage("vi")}
-              className={`block w-full text-left px-4 py-2 hover:bg-secondary transition-colors duration-200 ${
+              className={`block cursor-pointer w-full text-left px-4 py-2 hover:bg-secondary transition-colors duration-200 ${
                 language === "vi" ? "bg-primary/10 font-medium" : ""
               }`}
             >

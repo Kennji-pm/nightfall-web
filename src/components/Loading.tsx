@@ -144,7 +144,7 @@ export function Loading({ onFinished }: LoadingProps) {
         {/* Phần trăm tải */}
         <div className="flex justify-between text-sm mb-8">
           <span>
-            {imagesLoaded ? "Preparing..." : "Loading..."}
+            {imagesLoaded ? "Loading..." : "Preparing..."}
           </span>
           <span>{Math.round(progress)}%</span>
         </div>

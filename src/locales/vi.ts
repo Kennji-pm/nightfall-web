@@ -5,6 +5,7 @@ export const vi = {
     store: "Cửa Hàng",
     vote: "Bình Chọn",
     join: "Tham Gia Ngay",
+    login: "Đăng Nhập",
   },
   loading: {
     preparing: "Đang Chuẩn Bị...",
@@ -30,6 +31,8 @@ export const vi = {
       offline: "Ngoại Tuyến",
       players: "Người Chơi",
       version: "Phiên Bản",
+      checking: "Đang Kiểm Tra...",
+      checking_desc: "Đang kiểm tra trạng thái máy chủ, vui lòng chờ...",
       maintenance: "Máy chủ đang được bảo trì. Vui lòng quay lại sau.",
     },
     features: {

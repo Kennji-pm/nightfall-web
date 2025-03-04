@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "../hooks/useTranslation";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSelector } from "./LanguageSelector";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -71,11 +71,45 @@ export function Navbar() {
             >
               {t.navbar.vote}
             </Link>
-            <Link
-              href="/#join"
-              className="minecraft-animated-btn text-base"
-            >
-              {t.navbar.join}
+            <div className="relative group">
+              <button className="font-medium flex items-center gap-1 relative overflow-hidden">
+                More
+                <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                <span className="group-hover:text-primary transition-colors duration-300"></span>
+              </button>
+              <div className="absolute top-full left-0 mt-1 w-48 rounded-lg bg-background border border-border shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100 z-100">
+                <div className="py-1">
+                  <Link
+                    href="/terms"
+                    className="block px-4 py-2 text-sm hover:bg-primary/10 transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                  <Link
+                    href="/privacy"
+                    className="block px-4 py-2 text-sm hover:bg-primary/10 transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
+                    href="/vote"
+                    className="block px-4 py-2 text-sm hover:bg-primary/10 transition-colors"
+                  >
+                    Vote for Us
+                  </Link>
+                  <a
+                    href="https://example.com/forum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm hover:bg-primary/10 transition-colors flex items-center justify-between"
+                  >
+                    Forums <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <Link href="/#join" className="minecraft-animated-btn text-base">
+              {t.navbar.login}
             </Link>
           </nav>
 
@@ -135,13 +169,21 @@ export function Navbar() {
             >
               {t.navbar.vote}
             </Link>
-            <Link
-              href="/#join"
-              className="minecraft-btn text-center"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t.navbar.join}
-            </Link>
+            <div className="border-t border-border my-2"></div>
+              <Link
+                href="/terms"
+                className="font-medium p-3 hover:bg-secondary/80 rounded-lg transition-colors flex items-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/#join"
+                className="minecraft-btn text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t.navbar.login}
+              </Link>
           </div>
         </div>
       )}

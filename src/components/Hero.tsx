@@ -176,17 +176,17 @@ export function Hero() {
                   {serverStatus === 'online' ? (
                     <>
                       <Wifi className="h-4 w-4" /> 
-                      <span className="text-sm font-semibold">Online</span>
+                      <span className="text-sm font-semibold">{t.serverstatus.online}</span>
                     </>
                   ) : serverStatus === 'offline' ? (
                     <>
                       <WifiOff className="h-4 w-4" /> 
-                      <span className="text-sm font-semibold">Offline</span>
+                      <span className="text-sm font-semibold">{t.serverstatus.offline}</span>
                     </>
                   ) : (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" /> 
-                      <span className="text-sm font-semibold">Checking...</span>
+                      <span className="text-sm font-semibold">{t.serverstatus.checking}</span>
                     </>
                   )}
                 </div>
@@ -220,7 +220,7 @@ export function Hero() {
               {serverStatus === 'checking' && (
                 <div className="text-sm text-muted-foreground bg-background/40 p-2 rounded-lg flex items-center gap-2">
                   <div className="animate-pulse w-full text-center">
-                    Checking server status...
+                  {t.serverstatus.checking_desc}
                   </div>
                 </div>
               )}

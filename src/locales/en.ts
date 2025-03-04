@@ -5,6 +5,7 @@ export const en = {
       store: "Store",
       vote: "Vote",
       join: "Join Now",
+      login: "Login",
     },
     loading: {
       preparing: "Preparing...",
@@ -30,6 +31,8 @@ export const en = {
       offline: "Offline",
       players: "Player Online",
       version: "Version",
+      checking: "Checking...",
+      checking_desc: "Checking server status, please wait...",
       maintenance: "Server is currently under maintenance. Please check back later.",
     },
     features: {
