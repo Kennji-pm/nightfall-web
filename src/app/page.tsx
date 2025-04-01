@@ -8,6 +8,7 @@ import { Footer } from "../components/Footer";
 import { TranslationProvider } from "../hooks/useTranslation";
 import { ContactPopup } from "@/components/ContactPopup";
 import AutoSlideShow from "@/components/AutoSlideShow";
+import AdBanner from "@/components/adsense/AdBanner";
 
 export default function Home () {
   useEffect(() => {
@@ -108,6 +109,9 @@ export default function Home () {
         <Features />
         <AutoSlideShow />
         <JoinServer />
+        <div className="bg-black">
+          <AdBanner dataAdFormat="auto" dataAdSlot="5296933407" dataFullWidthResponsive={true}/>
+        </div>
         <Footer />
         <ContactPopup />
         <div className="fixed -bottom-20 -left-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl z-0 parallax" data-speed="0.05"></div>

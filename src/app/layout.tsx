@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Loading } from "@/components/Loading";
 import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
+import AdSense from "@/components/adsense/AdSense";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
           property="og:description"
           content={metadata.description}
         />
+        <AdSense pId="ca-pub-7395920081704697"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
