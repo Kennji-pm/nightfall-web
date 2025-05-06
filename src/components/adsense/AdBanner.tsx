@@ -11,14 +11,11 @@ const AdBanner = ({ dataAdSlot, dataAdFormat, dataFullWidthResponsive }: AdBanne
 
     useEffect(() => {
         try {
-            ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-                {}
-            );
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (err) {
+          console.log(err);
         }
-        catch (error){
-            console.error("Google Ads Error: ", error)
-        }
-    }, []);
+      }, []);
 
     return (
         <ins

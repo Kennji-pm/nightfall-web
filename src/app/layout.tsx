@@ -2,7 +2,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect, useState } from "react";
 import { Loading } from "@/components/Loading";
-import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import AdSense from "@/components/adsense/AdSense";
 
@@ -62,7 +61,6 @@ export default function RootLayout({
         ) : (
           children
         )}
-        <Analytics />
       </body>
     </html>
   );

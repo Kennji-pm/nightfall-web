@@ -1,0 +1,53 @@
+.animate-on-scroll {
+@apply opacity-0 transition-all duration-700;
+}
+.animate-on-scroll.animated {
+@apply opacity-100 translate-y-0;
+}
+.animate-on-scroll.fade-up {
+@apply translate-y-10;
+}
+
+.animate-on-scroll.fade-up.animated {
+@apply translate-y-0;
+}
+
+.animate-on-scroll.fade-left {
+@apply -translate-x-10;
+}
+
+.animate-on-scroll.fade-left.animated {
+@apply translate-x-0;
+}
+
+.animate-on-scroll.fade-right {
+@apply translate-x-10;
+}
+
+.animate-on-scroll.fade-right.animated {
+@apply translate-x-0;
+}
+
+.animate-on-scroll.zoom-in {
+@apply scale-95;
+}
+
+.animate-on-scroll.zoom-in.animated {
+@apply scale-100;
+}
+
+.animate-on-scroll.zoom-out {
+@apply scale-105;
+}
+
+.animate-on-scroll.zoom-out.animated {
+@apply scale-100;
+}
+
+.animate-on-scroll.rotate-in {
+@apply rotate-6;
+}
+
+.animate-on-scroll.rotate-in.animated {
+@apply rotate-0;
+}

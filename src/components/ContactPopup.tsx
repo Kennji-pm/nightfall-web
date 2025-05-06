@@ -70,7 +70,7 @@ export const ContactPopup = () => {
             {/* Close button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground p-1 rounded-full hover:bg-muted transition-colors duration-200"
+              className="absolute top-4 right-4 text-white hover:text-foreground p-1 rounded-full hover:bg-muted transition-colors duration-200"
               aria-label="Close"
             >
               <X size={20} />

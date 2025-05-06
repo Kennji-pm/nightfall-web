@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 @import "../../src/styles/gallery.css";
+@import "../../src/styles/animate.css";
+@import "../../src/styles/promo.css";
 
 @layer base {
   :root {
@@ -130,59 +132,6 @@
 }
 .section-title {
   @apply text-3xl md:text-4xl font-bold text-center mb-8 relative;
-}
-.animate-on-scroll {
-  @apply opacity-0 transition-all duration-700;
-}
-.animate-on-scroll.animated {
-  @apply opacity-100 translate-y-0;
-}
-.animate-on-scroll.fade-up {
-  @apply translate-y-10;
-}
-
-.animate-on-scroll.fade-up.animated {
-  @apply translate-y-0;
-}
-
-.animate-on-scroll.fade-left {
-  @apply -translate-x-10;
-}
-
-.animate-on-scroll.fade-left.animated {
-  @apply translate-x-0;
-}
-
-.animate-on-scroll.fade-right {
-  @apply translate-x-10;
-}
-
-.animate-on-scroll.fade-right.animated {
-  @apply translate-x-0;
-}
-
-.animate-on-scroll.zoom-in {
-  @apply scale-95;
-}
-
-.animate-on-scroll.zoom-in.animated {
-  @apply scale-100;
-}
-
-.animate-on-scroll.zoom-out {
-  @apply scale-105;
-}
-
-.animate-on-scroll.zoom-out.animated {
-  @apply scale-100;
-}
-
-.animate-on-scroll.rotate-in {
-  @apply rotate-6;
-}
-
-.animate-on-scroll.rotate-in.animated {
-  @apply rotate-0;
 }
 
 /* Stagger children animations */
@@ -370,26 +319,6 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-.gallery-item {
-  @apply opacity-0 transform translate-y-4 transition-all duration-500;
-}
-
-.gallery-item.animate-in {
-  @apply opacity-100 translate-y-0;
-}
-
-.gallery-filter-button {
-  @apply px-4 py-2 rounded-full transition-all duration-300 text-sm;
-}
-
-.gallery-filter-button.active {
-  @apply bg-primary text-white shadow-md;
-}
-
-.gallery-filter-button:not(.active) {
-  @apply bg-background/80 hover:bg-background/90 text-muted-foreground hover:text-foreground;
-}
-
 /* Image Lightbox */
 .lightbox-overlay {
   @apply fixed inset-0 bg-black/95 z-50 opacity-0 transition-opacity duration-300;
@@ -412,4 +341,27 @@ html {
 }
 .minecraft-pattern-bg {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%233689fe' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Counter animation for statistics */
+.counter {
+  display: inline-block;
+  position: relative;
+}
+
+.counter::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary, #4f46e5), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.8s ease-out 0.3s;
+}
+
+.animated .counter::after {
+  transform: scaleX(1);
 }

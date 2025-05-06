@@ -6,6 +6,8 @@ export const en = {
       vote: "Vote",
       join: "Join Now",
       login: "Login",
+      gallery: "Gallery",
+      server: "Server"
     },
     loading: {
       preparing: "Preparing...",

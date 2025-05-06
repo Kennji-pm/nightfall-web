@@ -6,6 +6,8 @@ export const vi = {
     vote: "Bình Chọn",
     join: "Tham Gia Ngay",
     login: "Đăng Nhập",
+    gallery: "Bộ Sưu Tập",
+    server: "Máy Chủ"
   },
   loading: {
     preparing: "Đang Chuẩn Bị...",

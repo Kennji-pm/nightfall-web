@@ -104,14 +104,18 @@ export default function Home () {
     <TranslationProvider>
       <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <div className="fixed inset-0 opacity-30 dark:opacity-10 pointer-events-none bg-[radial-gradient(#3689fe_1px,transparent_1px)] [background-size:40px_40px]"></div>
+      
+      {/* Navbar is fixed at the top, so we need space for content */}
+      <div className="h-8 md:h-24"></div>
+
         <Navbar />
         <Hero />
         <Features />
         <AutoSlideShow />
         <JoinServer />
-        <div className="bg-black">
+        {/* <div className="bg-black">
           <AdBanner dataAdFormat="auto" dataAdSlot="5296933407" dataFullWidthResponsive={true}/>
-        </div>
+        </div> */}
         <Footer />
         <ContactPopup />
         <div className="fixed -bottom-20 -left-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl z-0 parallax" data-speed="0.05"></div>

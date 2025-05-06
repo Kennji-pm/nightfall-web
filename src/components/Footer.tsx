@@ -132,10 +132,7 @@ export function Footer() {
               {t.footer.terms}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link href="/" className="hover:text-primary transition-colors duration-200 relative group">
-              {t.footer.contact}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-            </Link>
+            <div className="w-10"></div>
           </div>
         </div>
       </div>

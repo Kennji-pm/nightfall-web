@@ -4,6 +4,7 @@ import { Wifi, WifiOff, Users, Globe, Paperclip, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
+import { Typewriter } from "react-simple-typewriter";
 
 export function Hero() {
   const { t } = useTranslation();
@@ -145,7 +146,15 @@ export function Hero() {
               {t.hero.title}
             </h1>
             <p className="text-base md:text-xl mb-6 md:mb-8 text-muted-foreground">
-              {t.hero.subtitle}
+              <Typewriter
+                  words={[t.hero.subtitle]}
+                  loop={1}
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={40}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
             <Link
