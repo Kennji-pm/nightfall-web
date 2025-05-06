@@ -9,7 +9,6 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { useIsMobile } from "@/hooks/useMobile";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Logo } from "./navbar/Logo";
 
@@ -18,18 +17,14 @@ export const Navbar = () => {
   const [showBanner, setShowBanner] = useState(true);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const prevScrollY = useRef(0);
-  const [navVisible, setNavVisible] = useState(true);
+  const [,setNavVisible] = useState(true);
   const location = usePathname();
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   
   // Special pages require different navbar behavior
-  const specialPages = ['/gallery', '/punishment', '/about', '/profile'];
+  const specialPages = ['/gallery', '/punishments', '/about', '/profile'];
   const isSpecialPage = specialPages.some(page => location.toLowerCase().startsWith(page));
-  
-  const handleBannerClose = useCallback(() => {
-    setShowBanner(false);
-  }, []);
   
   // Improved scroll handler with better behavior
   const handleScroll = useCallback(() => {
@@ -142,7 +137,7 @@ export const Navbar = () => {
               showBanner ? 'max-h-16' : 'max-h-0'
             }`}
           >
-            <PromoBanner promos={promoMessages} onClose={handleBannerClose} />
+            <PromoBanner promos={promoMessages}/>
           </div>
         )}
         

@@ -16,7 +16,7 @@ interface NavLinksProps {
 }
 
 export const NavLinks = ({ t, onClose }: NavLinksProps) => {
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [, setOpenMenu] = useState<string | null>(null);
 
   const handleOpenChange = (open: boolean, menu: string) => {
     if (open) {

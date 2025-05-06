@@ -8,7 +8,7 @@ import { Footer } from "../components/Footer";
 import { TranslationProvider } from "../hooks/useTranslation";
 import { ContactPopup } from "@/components/ContactPopup";
 import AutoSlideShow from "@/components/AutoSlideShow";
-import AdBanner from "@/components/adsense/AdBanner";
+// import AdBanner from "@/components/adsense/AdBanner";
 
 export default function Home () {
   useEffect(() => {

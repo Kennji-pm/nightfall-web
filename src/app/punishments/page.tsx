@@ -2,12 +2,9 @@
 import { useState, useEffect, useRef } from "react";
 import {
   Search,
-  ArrowLeft,
-  ArrowRight,
   ArrowDown,
   ArrowUp,
   X,
-  Filter,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -106,18 +103,18 @@ const PunishmentList = () => {
     return null;
   };
 
-  // Background animation variants
-  const backgroundVariants = {
-    animate: {
-      backgroundPosition: ["0% 0%", "100% 100%"],
-      transition: {
-        duration: 20,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-      },
-    },
-  };
+//   // Background animation variants
+//   const backgroundVariants = {
+//     animate: {
+//       backgroundPosition: ["0% 0%", "100% 100%"],
+//       transition: {
+//         duration: 20,
+//         ease: "linear",
+//         repeat: Infinity,
+//         repeatType: "reverse" as const,
+//       },
+//     },
+//   };
 
   // Card animation variants
   const cardVariants = {

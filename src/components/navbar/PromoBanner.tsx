@@ -2,12 +2,10 @@ import { useState, useEffect, memo } from "react";
 
 interface PromoBannerProps {
   promos: string[];
-  onClose: () => void;
 }
 
 export const PromoBanner = memo(function PromoBanner({
   promos,
-  onClose,
 }: PromoBannerProps) {
   const [activePromoIndex, setActivePromoIndex] = useState(0);
 

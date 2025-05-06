@@ -132,18 +132,18 @@ const PunishmentDetail = () => {
     return diffInDays === 0 ? "today" : `in ${diffInDays} days`;
   };
 
-  // Background animation variants
-  const backgroundVariants = {
-    animate: {
-      backgroundPosition: ["0% 0%", "100% 100%"],
-      transition: {
-        duration: 20,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-      },
-    },
-  };
+//   // Background animation variants
+//   const backgroundVariants = {
+//     animate: {
+//       backgroundPosition: ["0% 0%", "100% 100%"],
+//       transition: {
+//         duration: 20,
+//         ease: "linear",
+//         repeat: Infinity,
+//         repeatType: "reverse" as const,
+//       },
+//     },
+//   };
 
   // Card animation variants
   const cardVariants = {
